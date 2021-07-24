@@ -5,7 +5,19 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto"> 
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Employees", employees_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Tax Brackets", tax_brackets_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Salaries", salaries_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Logs", logs_path, class:"nav-link" %>
+      </li>
       <li class="nav-item">
         <%= link_to "About", home_about_path, class:"nav-link" %>
       </li>
