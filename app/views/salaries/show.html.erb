@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @salary.salary %>
+</p>
+
+<p>
+  <strong>Annual salary:</strong>
+  <%= @salary.annual_salary %>
+</p>
+
+<p>
+  <strong>Monthly nett income:</strong>
+  <%= @salary.monthly_nett_income %>
+</p>
+
+<%= link_to 'Edit', edit_salary_path(@salary) %> |
+<%= link_to 'Back', salaries_path %>

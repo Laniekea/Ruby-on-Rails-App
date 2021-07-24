@@ -1,0 +1,27 @@
+<%= form_with(model: tax_bracket) do |form| %>
+  <% if tax_bracket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tax_bracket.errors.count, "error") %> prohibited this tax_bracket from being saved:</h2>
+
+      <ul>
+        <% tax_bracket.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.text_field :level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rate %>
+    <%= form.text_field :rate %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

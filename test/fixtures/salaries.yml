@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  salary: 1.5
+  annual_salary: 1.5
+  monthly_nett_income: 1.5
+
+two:
+  salary: 1.5
+  annual_salary: 1.5
+  monthly_nett_income: 1.5

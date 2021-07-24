@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @log.timestamp %>
+</p>
+
+<p>
+  <strong>Annual salary:</strong>
+  <%= @log.annual_salary %>
+</p>
+
+<p>
+  <strong>Monthly income tax:</strong>
+  <%= @log.monthly_income_tax %>
+</p>
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>

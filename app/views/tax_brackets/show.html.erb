@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @tax_bracket.level %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @tax_bracket.rate %>
+</p>
+
+<%= link_to 'Edit', edit_tax_bracket_path(@tax_bracket) %> |
+<%= link_to 'Back', tax_brackets_path %>

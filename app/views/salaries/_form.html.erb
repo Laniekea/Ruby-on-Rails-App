@@ -1,0 +1,32 @@
+<%= form_with(model: salary) do |form| %>
+  <% if salary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(salary.errors.count, "error") %> prohibited this salary from being saved:</h2>
+
+      <ul>
+        <% salary.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :salary %>
+    <%= form.text_field :salary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :annual_salary %>
+    <%= form.text_field :annual_salary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :monthly_nett_income %>
+    <%= form.text_field :monthly_nett_income %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
