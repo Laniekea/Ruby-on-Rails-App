@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_25_035242) do
+ActiveRecord::Schema.define(version: 2021_07_25_040826) do
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "salary_id"
+    t.index ["salary_id"], name: "index_employees_on_salary_id"
   end
 
   create_table "logs", force: :cascade do |t|

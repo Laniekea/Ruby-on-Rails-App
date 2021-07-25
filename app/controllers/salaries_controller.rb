@@ -13,6 +13,11 @@ class SalariesController < ApplicationController
   # GET /salaries/new
   def new
     @salary = Salary.new
+    @employee = Employee.all
+
+    # if (@salary.salary > 1000) 
+    #   tax_bracket_id = 4
+    # end
   end
 
   # GET /salaries/1/edit
@@ -23,6 +28,20 @@ class SalariesController < ApplicationController
   def create
     @salary = Salary.new(salary_params)
 
+    if (@salary.salary > 180001)
+      @salary.tax_bracket_id = 1
+    elsif (@salary.salary > 80001)
+      @salary.tax_bracket_id = 2
+    elsif (@salary.salary > 40001)
+      @salary.tax_bracket_id = 3
+    elsif (@salary.salary > 20001)
+      @salary.tax_bracket_id = 4
+    elsif (@salary.salary > 1)
+      @salary.tax_bracket_id = 5
+    end 
+
+    @salary.annual_salary = @salary.salary * 12
+    
     respond_to do |format|
       if @salary.save
         format.html { redirect_to @salary, notice: "Salary was successfully created." }
@@ -64,6 +83,8 @@ class SalariesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def salary_params
-      params.require(:salary).permit(:salary, :annual_salary, :monthly_nett_income)
+      params.require(:salary).permit(:salary, :annual_salary, :monthly_nett_income, :employee_id)
+      # params.require(:employee).permit(employee_id: [])
+      
     end
 end

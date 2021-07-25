@@ -1,5 +1,6 @@
 class Salary < ApplicationRecord
   belongs_to :employees
-  belongs_to :tax_brackets
+  has_one :tax_brackets
 
+  
 end

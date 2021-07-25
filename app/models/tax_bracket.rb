@@ -1,3 +1,3 @@
 class TaxBracket < ApplicationRecord
-  has_many :salaries
+  belongs_to :salaries
 end
