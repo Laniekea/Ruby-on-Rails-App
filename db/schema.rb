@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_24_100833) do
+ActiveRecord::Schema.define(version: 2021_07_25_035242) do
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2021_07_24_100833) do
     t.float "monthly_income_tax"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "employee_id"
+    t.index ["employee_id"], name: "index_logs_on_employee_id"
   end
 
   create_table "salaries", force: :cascade do |t|
@@ -35,6 +37,10 @@ ActiveRecord::Schema.define(version: 2021_07_24_100833) do
     t.float "monthly_nett_income"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "employee_id"
+    t.integer "tax_bracket_id"
+    t.index ["employee_id"], name: "index_salaries_on_employee_id"
+    t.index ["tax_bracket_id"], name: "index_salaries_on_tax_bracket_id"
   end
 
   create_table "tax_brackets", force: :cascade do |t|

@@ -1,4 +1,4 @@
 class Log < ApplicationRecord
-  has_one :employees
+  belongs_to :employees
      
 end
